@@ -1,0 +1,6 @@
+<div class="sidebar">
+	<div class="links" *ngFor="let sidebarContent of sidebar">
+		<i [ngClass]="'bx bx-' + sidebarContent.icon"></i>
+		<a [routerLink]="sidebarContent.route" routerLinkActive="active">{{sidebarContent.name}}</a>
+	</div>
+</div>

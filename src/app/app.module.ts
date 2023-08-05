@@ -7,11 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
-import { Oauth2Component } from './oauth2/oauth2.component';
+import { LoginComponent } from './auth/login/login.component';
+import { Oauth2Component } from './auth/oauth2/oauth2.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LogoutComponent } from './logout/logout.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './dashboard/main/main.component';
+import { AutomodComponent } from './dashboard/automod/automod.component';
+import { MovimientosComponent } from './dashboard/movimientos/movimientos.component';
+import { LogsComponent } from './dashboard/logs/logs.component';
+import { IgnoreComponent } from './dashboard/ignore/ignore.component';
+import { ComandosComponent } from './dashboard/comandos/comandos.component';
+import { DashboardSidebarComponent } from './dashboard/dashboard-sidebar/dashboard-sidebar.component';
 
 @NgModule({
 	declarations: [
@@ -20,9 +27,16 @@ import { FooterComponent } from './footer/footer.component';
 		NavbarComponent,
 		LoginComponent,
 		Oauth2Component,
-  ProfileComponent,
-  LogoutComponent,
-  FooterComponent,
+		ProfileComponent,
+		LogoutComponent,
+		FooterComponent,
+		MainComponent,
+		AutomodComponent,
+		MovimientosComponent,
+		LogsComponent,
+		IgnoreComponent,
+		ComandosComponent,
+		DashboardSidebarComponent,
 	],
 	imports: [
 		BrowserModule,

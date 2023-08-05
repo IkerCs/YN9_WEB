@@ -12,7 +12,7 @@ import Guild from '../@types/Guild';
 export class ProfileComponent {
 	user: User | null = JSON.parse(this.authService.getUserInfo()!);
 	guilds: Guild[] = this.user?.profile.guilds || [];
-	adminGuilds: Guild[] = this.guilds.filter((guild: Guild) => guild.permissions & 0x20).sort();
+	adminGuilds: Guild[] = this.guilds.filter((guild: Guild) => (guild.permissions & 0x20) === 0x20).sort();
 	guildData = [
 		{ label: 'Servidores en total', icon: 'bx bx-server', value: this.guilds.length },
 		{ label: 'Servidores con YN9', icon: 'bx bx-bot', value: this.guilds.filter((guild: Guild) => guild.yn9).length },

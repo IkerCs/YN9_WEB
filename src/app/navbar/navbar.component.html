@@ -5,8 +5,8 @@
 			<a href="{{ item.path }}">{{ item.label }}</a>
 		</li>
 		<li>
-			<a *ngIf="!user" href="/login" #login>Login</a>
-			<a *ngIf="user" href="/profile">Perfil</a>
+			<a *ngIf="!user" href="/oauth2/login" #login>Login</a>
+			<a *ngIf="user" href="/dashboard/@me">Perfil</a>
 		</li>
 	</ul>
 	<i class='bx bx-menu-alt-right' (click)="menu = !menu"></i>
@@ -18,8 +18,8 @@
 			<a href="{{ item.path }}">{{ item.label }}</a>
 		</li>
 		<li>
-			<a *ngIf="!user" href="/login" #sidebar_login>Login</a>
-			<a *ngIf="user" href="/profile">Perfil</a>
+			<a *ngIf="!user" href="/oauth2/login" #sidebar_login>Login</a>
+			<a *ngIf="user" href="/dashboard/@me">Perfil</a>
 		</li>
 	</ul>
 </div>

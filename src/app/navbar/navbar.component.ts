@@ -19,21 +19,17 @@ export class NavbarComponent {
 		{ label: 'Comandos', path: '/comandos' },
 	];
 
-	constructor(private authService: AuthService) {
-		console.log('user', this.user);
-		console.log('token', this.authService.getToken());
-	}
+	constructor(private authService: AuthService) {	}
 
 	ngOnInit() {
 		if (this.user == null) {
-			console.log('No user object detected, fetching user for delayed-rendering');
 			this.authService.getUserInfoObserver().subscribe({
 				next: (user: User) => {
 					if (!user.profile) return;
 					if (!this.login) return;
 					this.user = user;
 					this.login.nativeElement.innerHTML = 'Perfil';
-					this.login.nativeElement.href = '/perfil';
+					this.login.nativeElement.href = '/dashboard/@me';
 				},
 			});
 		}
