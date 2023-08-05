@@ -1,0 +1,25 @@
+<nav>
+	<div class="logo"><a href="/">YN9</a></div>
+	<ul class="nav-links">
+		<li *ngFor="let item of menuItems">
+			<a href="{{ item.path }}">{{ item.label }}</a>
+		</li>
+		<li>
+			<a *ngIf="!user" href="/login" #login>Login</a>
+			<a *ngIf="user" href="/profile">Perfil</a>
+		</li>
+	</ul>
+	<i class='bx bx-menu-alt-right' (click)="menu = !menu"></i>
+</nav>
+
+<div [ngClass]="menu ? 'active sidebar' : 'sidebar'">
+	<ul>
+		<li *ngFor="let item of menuItems">
+			<a href="{{ item.path }}">{{ item.label }}</a>
+		</li>
+		<li>
+			<a *ngIf="!user" href="/login" #sidebar_login>Login</a>
+			<a *ngIf="user" href="/profile">Perfil</a>
+		</li>
+	</ul>
+</div>

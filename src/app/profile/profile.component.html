@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="guildData">
+		<div class="dataCards">
+			<div class="dataCard" *ngFor="let guild of guildData">
+				<div class="title">
+					<i [ngClass]="guild.icon"></i>
+					<p class="label">{{guild.label}}</p>	
+				</div>
+				<p class="value">{{guild.value}}</p>
+			</div>	
+		</div>
+
+		<div class="guilds">
+			<div class="guild" *ngFor="let guild of adminGuilds" (click)="openLink('/dashboard/' + guild.id)" [ngClass]="guild.yn9 ? '' : 'no-yn9'">
+				<img *ngIf="guild.icon" src="https://cdn.discordapp.com/icons/{{guild.id}}/{{guild.icon}}.webp" alt="{{guild.name}} icon">
+				<img *ngIf="!guild.icon" src="https://cdn.discordapp.com/icons/754874175188893696/2f8618e686084657028cc2ce541c3621.webp" alt="{{guild.name}} default icon">
+				<div class="data">
+					<p>{{guild.name}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile">
+		<div class="data"><p>Registrado como {{user?.profile?.username}}</p></div>
+		<div class="data"><p>Discord ID: {{user?.profile?.id}}</p></div>
+		<div class="data" [innerHTML]="mfa"></div>
+	
+		<div class="buttons">
+			<button (click)="openLink('https://discord.gg/DeK9s4SgME')">Servidor de soporte</button>
+			<button (click)="openLink('https://discord.com/api/oauth2/authorize?client_id=746581603844751460&permissions=8&scope=bot')">Agregame a tu servidor</button>
+			<button (click)="openLink('/logout')">Logout</button>
+		</div>
+	</div>
+</div>
